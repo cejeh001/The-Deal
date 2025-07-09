@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 51: Captions and say menuitems may not exist in the same menu.
+    "Accept Deal"
+                 ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Wed Jul  9 14:40:45 2025
