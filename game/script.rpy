@@ -3,9 +3,22 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define L = Character("Licc")
-define N = Character("Note")
+define L = Character("Licc", color="#b24a4a",)
+define N = Character("Note", color="#4a7eb2")
 
+# images
+image Licc 1 = "images/Licc 1.png"
+image Licc 2 = "images/Licc 2.png"
+image Licc 3 = "images/Licc 3.png"
+image Licc 4 = "images/Licc 4.png"
+image Licc 5 = "images/Licc 5.png"
+image Licc 6 = "images/Licc 6.png"
+image Licc 7 = "images/Licc 7.png"
+image Licc 8 = "images/Licc 8.png"
+image Licc 9 = "images/Licc 9.png"
+image Licc 10 = "images/Licc 10.png"
+
+image bg room = "images/background.png"
 
 # The game starts here.
 
@@ -17,11 +30,15 @@ label start:
 
     scene bg room
 
+
+    "A minimalistic glass meeting room, high above the city."
+    "The artist, Note, sits across from a man in a crisp, too-perfect suit: Licc, a representative from the AI company SynMind."
+
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    show Licc 1 at center
 
     # These display lines of dialogue.
 
@@ -29,20 +46,32 @@ label start:
 
     N "Nice to meet you too."
 
+    show Licc 2 at center
+
     L "Just so you know what we’re about, I’m Licc, and I proudly represent SynMind, an organiation using AI to innovate art."
 
+    show Licc 3 at center
+
     L "We have... collaborated with many creators and are happy to add you to the team."
+
+    show Licc 4 at center
 
     L "Your illustrations are very and I mean VERY good."
 
     N "Thank you."
 
     L "You’re very skilled~"
+
+    show Licc 5 at center
     L "It is a shame they don’t pay your rent, and you’re on the final pieces of your savings."
 
     N "Yeah..."
+
+    show Licc 2 at center
+
     L "And so I’m elated to offer you a deal."
     L "SynMind, our organisation, wants you to promote our franchise! And in exchange..."
+    show Licc 6 at center
     L "we’ll give you up from 5 million dollars!"
 
     menu:
@@ -122,6 +151,8 @@ label start:
 
 #acceptance scene
 label accept:
+
+    show Licc 8 at center
     L "Nice! Good to have you on the team, Note!"
     N "Yeah, thanks."
     return
