@@ -17,6 +17,14 @@ image Licc 7 = "images/Licc 7.png"
 image Licc 8 = "images/Licc 8.png"
 image Licc 9 = "images/Licc 9.png"
 image Licc 10 = "images/Licc 10.png"
+image Licc 11 = "images/Licc 11.png"
+image Licc 12 = "images/Licc 12.png"
+image Licc 13 = "images/Licc 13.png"
+image Licc 14 = "images/Licc 14.png"
+image Licc 15 = "images/Licc 15.png"
+image Licc 16= "images/Licc 16.png"
+image Licc 17= "images/Licc 17.png"
+image Licc 18= "images/Licc 18.png"
 
 image bg room = "images/background.png"
 
@@ -84,12 +92,26 @@ label start:
         "Refuse":
             N "I'm sorry, but I can't accept this deal."
 
+            show Licc 9 at center
+
             L "Hmm? Why not?"
+
+            show Licc 5 at center
+
             L " Oooohh, I get it, you think it’s inauthentic or we’ll have you under our thumb or something?"
+
+            show Licc 10 at center
+
             L "I can assure you, Note, we’re not asking you to sell your soul or anything of the sort..."
+
+            show Licc 3 at center
+
             L "all we’re asking of you to do for millions of dollars is to tell the world that we aren’t trying to replace creativity – we're just amplifying it~"
 
+
+            show Licc 2 at center
             menu:
+
                 L "Isn't it a good idea for you to help us?"
 
                 "Accept Deal":
@@ -98,11 +120,19 @@ label start:
                 "Refuse":
                     N "Amplifying it with what, exactly?"
                     N " A database of every artist’s work you scraped without permission?"
+                    
+                    show Licc 10 at center
 
                     L "Woah woah woah, who said we did all that?"
                     L "And even if we have, we’re long past that... we’ve learned from those mistakes."
+
+                    show Licc 1
+
                     L "What we do now is reach out a hand to artists from our side."
-                    L "Artists like you."
+
+                    show Licc 4 at center
+
+                    L "Artists like you, Note."
 
                     menu:
                         "Accept Deal":
@@ -111,8 +141,14 @@ label start:
                         "Refuse":
                             N "Sorry, but I can't force myself to smile, take your money, and tell my audience it’s okay to use a machine to finish their painting for them."
 
+                            show Licc 3 at center
+
                             L "No. You say that with SynMind, anyone can create."
                             L "You don’t have to say you use it. You don’t even have to like it."
+
+                            #new one here
+                            show Licc 8 at center
+
                             L "Just accept it."
 
                             menu:
@@ -122,30 +158,59 @@ label start:
                                 "Refuse":
                                     N " You’re asking me to stand next to this wreckage and smile like it’s progress."
 
+                                    #new one here: smiling with shadows n stuff
+                                    show Licc 11 at center
+
                                     L "It IS progress. Evolution, even. All you’re doing right now is slowing it down, and why do that when you can help people feel less afraid?"
                                     L "With all due respect, I feel you’re letting all your power go to waste here."
-                                    L "Imagine how much better your life will be with that money, too! Any artist would kill for "
+                                    L "Imagine how much better your life will be with that money, too. Any artist would kill for a stable career doing what they love most."
 
                                     N " You really think selling out the people who can’t afford to compete with you is me using my power for good?"
-
+                                    #new one here: mouth closed
+                                    show Licc 12 at center
                                     ""
+                                    # show Licc new one here
+                                    show Licc 13 at center
 
                                     L "Fair enough."
+
+                                    # new one here: arms crossed
+
+                                    show Licc 14 at center
+
                                     L "You know, most people don’t even hesitate. They just see the number and nod."
+
+                                    show Licc 15 at center
+
                                     L "But you… you’re still thinking about the people who listen to you."
+
+                                    show Licc 16 at center
+
                                     L "That’s rare. And I respect it."
 
                                     N "Respect doesn't usually come with a non-disclosure agreement."
 
+                                    show Licc 17 at center
+
                                     L "Touché."
-                                    L "We won’t bother you again."
+
+                                    
+                                    show Licc 3 at center
+
+                                    L "Well with that settled, we won’t bother you again."
                                     L "This kind of offer only works if it feels right. And that’s clearly not the case for you."
-                                    L "Welp, I wish you the best in whatever you plan to do with all those paintings."
+                                    show Licc 13 at center
+                                    L "I wish you the best in whatever you plan to do with all those paintings."
                                     L "Just know that when the world changes, this door will be open."
+
+                                    show Licc 18 at center
+
                                     L "The best legacy is the one you can live with after all ~~"
 
     # This ends the game.
-
+    "she closes the door behind her, leaving Note alone in the room."
+    scene bg black with fade
+    pause(1.0)
     return
 
 
@@ -155,4 +220,8 @@ label accept:
     show Licc 8 at center
     L "Nice! Good to have you on the team, Note!"
     N "Yeah, thanks."
+
+    #fade to black
+    scene bg black with fade
+    pause(1.0)
     return
