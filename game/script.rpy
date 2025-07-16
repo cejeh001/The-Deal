@@ -11,6 +11,10 @@ transform speaking_bounce:
     easein 0.1 yoffset -15  # Quick rise up
     easeout 0.2 yoffset 0   # Gentle fall down with bounce effect
 
+# set channel volumes
+$ renpy.music.set_volume(0.6)
+$ renpy.sound.set_volume(0.5)
+
 # images
 image Licc 1 = "images/Licc 1.png"
 image Licc 2 = "images/Licc 2.png"
@@ -45,7 +49,7 @@ label start:
 
 
     "A minimalistic glass meeting room, high above the city."
-    "The artist, Note, sits across from a man in a crisp, too-perfect suit: Licc, a representative from the AI company SynMind."
+    "The artist, Note, sits across from a woman in a crisp, too-perfect suit: Licc, a representative from the AI company SynMind."
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -56,40 +60,59 @@ label start:
 
     # These display lines of dialogue.
 
+    play sound "audio/talking 1.mp3" noloop
+
     L "Nice to see you arrive to arrange this deal, Mister Note."
 
     N "Nice to meet you too."
 
     # show Licc 2 at center 
     show Licc 2 at speaking_bounce
+    play sound "audio/talking 1.mp3" noloop
 
     L "Just so you know what we’re about, I’m Licc, and I proudly represent SynMind, an organiation using AI to innovate art."
 
     show Licc 3 at speaking_bounce
+    play sound "audio/talking 2.mp3" noloop
 
     L "We have... collaborated with many creators and are happy to add you to the team."
 
     show Licc 4 at speaking_bounce
+    play sound "audio/talking 3.mp3" noloop
+
 
     L "Your illustrations are very and I mean VERY good."
 
     N "Thank you."
 
+    play sound "audio/talking 4.mp3" noloop
+
     L "You’re very skilled~"
 
     show Licc 5 at speaking_bounce
+    play sound "audio/talking 1.mp3" noloop
     L "It is a shame they don’t pay your rent, and you’re on the final pieces of your savings."
 
     N "Yeah..."
 
     show Licc 2 at speaking_bounce
+    play sound "audio/talking 3.mp3" noloop
 
     L "And so I’m elated to offer you a deal."
+
+    play sound "audio/talking 1.mp3" noloop
+
+
     L "SynMind, our organisation, wants you to promote our franchise! And in exchange..."
     show Licc 6 at speaking_bounce
+
+    play sound "audio/talking 2.mp3" noloop
     L "we’ll give you up from 5 million dollars!"
 
+    play sound "audio/talking 4.mp3" noloop
+    
     menu:
+        
         L "What do you think?"
 
         "Accept Deal":
@@ -103,25 +126,33 @@ label start:
             N "I'm sorry, but I can't accept this deal."
 
             show Licc 9 at speaking_bounce
+            play sound "audio/talking 2.mp3" noloop
 
             play music "audio/sneaky snitch.mp3" loop
+
 
             L "Hmm? Why not?"
 
             show Licc 5 at speaking_bounce
+            play sound "audio/talking 1.mp3" noloop
 
             L " Oooohh, I get it, you think it’s inauthentic or we’ll have you under our thumb or something?"
 
             show Licc 10 at speaking_bounce
+            stop sound
+            play sound "audio/talking 1.mp3" noloop
 
             L "I can assure you, Note, we’re not asking you to sell your soul or anything of the sort..."
 
             show Licc 3 at speaking_bounce
+            stop sound
+            play sound "audio/talking 1.mp3" noloop
 
             L "all we’re asking of you to do for millions of dollars is to tell the world that we aren’t trying to replace creativity – we're just amplifying it~"
 
 
             show Licc 2 at speaking_bounce
+            play sound "audio/talking 2.mp3" noloop
             menu:
 
                 L "Isn't it a good idea for you to help us?"
@@ -195,42 +226,59 @@ label start:
                                     # show Licc new one here
                                     show Licc 13 at speaking_bounce
 
+
                                     stop music
+                                    play sound "audio/talking 4.mp3" noloop
 
                                     L "Fair enough."
 
                                     # new one here: arms crossed
 
                                     show Licc 14 at speaking_bounce
+                                    play sound "audio/talking 1.mp3" noloop
 
                                     play music "audio/Elevator Music.mp3" loop
 
                                     L "You know, most people don’t even hesitate. They just see the number and nod."
 
                                     show Licc 15 at speaking_bounce
+                                    play sound "audio/talking 4.mp3" noloop
+                                    play sound "audio/talking 2.mp3" noloop
 
                                     L "But you… you’re still thinking about the people who listen to you."
 
                                     show Licc 16 at speaking_bounce
+                                    play sound "audio/talking 3.mp3" noloop
+                                    play sound "audio/talking 4.mp3" noloop
 
                                     L "That’s rare. And I respect it."
 
                                     N "Respect doesn't usually come with a non-disclosure agreement."
 
                                     show Licc 17 at speaking_bounce
+                                    play sound "audio/talking 4.mp3" noloop
 
                                     L "Touché."
 
                                     
                                     show Licc 3 at speaking_bounce
+                                    play sound "audio/talking 4.mp3" noloop
+                                    play sound "audio/talking 3.mp3" noloop
 
                                     L "Well with that settled, we won’t bother you again."
+
+                                    play sound "audio/talking 1.mp3" noloop
+
                                     L "This kind of offer only works if it feels right. And that’s clearly not the case for you."
+
                                     show Licc 13 at speaking_bounce
+
                                     L "I wish you the best in whatever you plan to do with all those paintings."
                                     L "Just know that when the world changes, this door will be open."
 
                                     show Licc 18 at speaking_bounce
+                                    play sound "audio/talking 2.mp3" noloop
+                                    play sound "audio/talking 3.mp3" noloop
                                     stop music fadeout 2.0
 
                                     L "The best legacy is the one you can live with after all ~~"
@@ -247,6 +295,8 @@ label start:
 label accept:
 
     show Licc 8 at speaking_bounce
+    play sound "audio/talking 2.mp3" noloop
+
     play music "audio/Mario Party 2 - Let the Game Begin.mp3" loop
     L "Nice! Good to have you on the team, Note!"
     N "Yeah, thanks..."
