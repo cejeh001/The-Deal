@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 51: Captions and say menuitems may not exist in the same menu.
-    "Accept Deal"
-                 ^
+File "game/script.rpy", line 101: play requires a channel
+    play "audio/Epic Shock (Doom).mp3" noloop
+         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jul  9 14:40:45 2025
+Wed Jul 16 14:37:10 2025

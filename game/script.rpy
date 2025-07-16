@@ -52,6 +52,7 @@ label start:
     # directory.
 
     show Licc 1 at center
+    play music "audio/fluffing a duck 1 hour loop.mp3" loop fadein 2.0
 
     # These display lines of dialogue.
 
@@ -96,9 +97,14 @@ label start:
 
 
         "Refuse":
+            stop music
+            play sound "audio/Epic Shock (Doom).mp3" noloop
+
             N "I'm sorry, but I can't accept this deal."
 
             show Licc 9 at speaking_bounce
+
+            play music "audio/sneaky snitch.mp3" loop
 
             L "Hmm? Why not?"
 
@@ -124,10 +130,16 @@ label start:
                     jump accept
                 
                 "Refuse":
+
+                    stop music
+
                     N "Amplifying it with what, exactly?"
+
                     N " A database of every artist’s work you scraped without permission?"
                     
                     show Licc 10 at speaking_bounce
+
+                    play music "audio/NXT elevator.mp3" loop
 
                     L "Woah woah woah, who said we did all that?"
                     L "And even if we have, we’re long past that... we’ve learned from those mistakes."
@@ -145,9 +157,14 @@ label start:
                             jump accept
                         
                         "Refuse":
+
+                            stop music
+
                             N "Sorry, but I can't force myself to smile, take your money, and tell my audience it’s okay to use a machine to finish their painting for them."
 
                             show Licc 3 at speaking_bounce
+
+                            play music "audio/tense gameshow music.mp3" loop
 
                             L "No. You say that with SynMind, anyone can create."
                             L "You don’t have to say you use it. You don’t even have to like it."
@@ -178,11 +195,15 @@ label start:
                                     # show Licc new one here
                                     show Licc 13 at speaking_bounce
 
+                                    stop music
+
                                     L "Fair enough."
 
                                     # new one here: arms crossed
 
                                     show Licc 14 at speaking_bounce
+
+                                    play music "audio/Elevator Music.mp3" loop
 
                                     L "You know, most people don’t even hesitate. They just see the number and nod."
 
@@ -210,14 +231,15 @@ label start:
                                     L "Just know that when the world changes, this door will be open."
 
                                     show Licc 18 at speaking_bounce
+                                    stop music fadeout 2.0
 
                                     L "The best legacy is the one you can live with after all ~~"
 
     # This ends the game.
     hide Licc 18 with dissolve
     "she closes the door behind her, leaving Note alone in the room."
-    scene bg black with fade
-    pause(1.0)
+    scene black with Dissolve(2.0)
+    pause(10.0)
     return
 
 
@@ -225,10 +247,12 @@ label start:
 label accept:
 
     show Licc 8 at speaking_bounce
+    play music "audio/Mario Party 2 - Let the Game Begin.mp3" loop
     L "Nice! Good to have you on the team, Note!"
-    N "Yeah, thanks."
+    N "Yeah, thanks..."
 
     #fade to black
-    scene bg black with fade
-    pause(1.0)
+    scene black with Dissolve(2.0)
+    stop music fadeout 2.0
+    pause(10.0)
     return
