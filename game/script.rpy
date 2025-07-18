@@ -272,8 +272,13 @@ label start:
                                     L "This kind of offer only works if it feels right. And that’s clearly not the case for you."
 
                                     show Licc 13 at speaking_bounce
+                                    play sound "audio/talking 1.mp3" noloop
 
                                     L "I wish you the best in whatever you plan to do with all those paintings."
+
+                                    show Licc 13 at speaking_bounce
+                                    play sound "audio/talking 1.mp3" noloop
+                                    
                                     L "Just know that when the world changes, this door will be open."
 
                                     show Licc 18 at speaking_bounce
